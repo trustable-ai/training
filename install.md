@@ -1,6 +1,6 @@
 a shell script
 
-check that OPS_REPO is http://github.com/nuvolarisb/bestia 
+check that OPS_REPO is http://github.com/nuvolaris/bestia 
 and OPS_BRANCH is bestia.
 
 If not add to .bashrc and to .zsh (on Mac)

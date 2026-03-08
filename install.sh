@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check and set OPS_REPO and OPS_BRANCH
-OPS_REPO_EXPECTED="http://github.com/nuvolarisb/bestia"
+OPS_REPO_EXPECTED="http://github.com/nuvolaris/bestia"
 OPS_BRANCH_EXPECTED="bestia"
 
 NEED_UPDATE=false
