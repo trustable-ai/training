@@ -1,0 +1,8 @@
+[submodule "olaris-aid"]
+	path = olaris-aid
+	url = git@github.com:trustable-ai/olaris-aid
+        branch = main
+[submodule "lesson1-starter"]
+	path = lesson1-starter
+	url = git@github.com:trustable-ai/lesson1-starter
+        branch = main
