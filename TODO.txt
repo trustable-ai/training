@@ -1,0 +1,13 @@
+COme installare l' ambiente
+
+
+1. I prerequisiti (docker, wsl)
+
+2. Instare ops
+
+3. Installare OpenServerless
+
+4. Collegarsi ad Ollama
+
+5. Attivare il vibe coding
+
