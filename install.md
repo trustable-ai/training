@@ -1,17 +1,19 @@
-a shell script
+Create script install.sh and a install.ps1 to set variables and download ops
 
-check that OPS_REPO is http://github.com/nuvolaris/bestia 
-and OPS_BRANCH is bestia.
+the script should set the variables:
 
-If not add to .bashrc and to .zsh (on Mac)
-and set the variables.
+- OPS_REPO=http://github.com/nuvolaris/bestia 
+- OPS_BRANCH=bestia
 
-Then execute a  `curl -fsSL n7s.co/get-ops | bash` 
+on windows, set the system variables
+on linux, add to .bashrc and .profile
+on mac add to .bashrc and .zshrc
 
-Source the bashrc or zshrc
+Dowloaad ops invoking
 
-Execute `ops -t` to load the dependencies
+curl -fsSL n7s.co/get-ops | bash on Linux/Mac
+irm n7s.co/get-ops-exe | iex on Windows
 
-Finally installs the plugin:
+Display a message asking to close the terminal before using it and ask for the user to press a key.
 
-ops -plugin https://github.com/trustable-ai/olaris-aid
+

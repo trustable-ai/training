@@ -1,5 +1,4 @@
-COme installare l' ambiente
-
+Come installare l' ambiente
 
 1. I prerequisiti (docker, wsl)
 
@@ -7,7 +6,11 @@ COme installare l' ambiente
 
 3. Installare OpenServerless
 
-4. Collegarsi ad Ollama
+4. Entrare nel devcontainer
 
-5. Attivare il vibe coding
+5. Collegarsi ad Ollama cloud o locale
+
+6. Fare delle modifche al codice
+
+7. Pubblicare
 

@@ -1,53 +1,42 @@
 #!/bin/bash
+# Install script for Trustable AI Training Course
 
-# Check and set OPS_REPO and OPS_BRANCH
-OPS_REPO_EXPECTED="http://github.com/nuvolaris/bestia"
-OPS_BRANCH_EXPECTED="bestia"
+OPS_REPO="http://github.com/nuvolaris/bestia"
+OPS_BRANCH="bestia"
 
-NEED_UPDATE=false
-
-if [ "$OPS_REPO" != "$OPS_REPO_EXPECTED" ] || [ "$OPS_BRANCH" != "$OPS_BRANCH_EXPECTED" ]; then
-    NEED_UPDATE=true
+# Detect OS and set environment variables
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS - add to .bashrc and .zshrc
+    for rcfile in "$HOME/.bashrc" "$HOME/.zshrc"; do
+        grep -q "OPS_REPO=" "$rcfile" 2>/dev/null && sed -i '' '/OPS_REPO=/d' "$rcfile"
+        grep -q "OPS_BRANCH=" "$rcfile" 2>/dev/null && sed -i '' '/OPS_BRANCH=/d' "$rcfile"
+        echo "export OPS_REPO=\"$OPS_REPO\"" >> "$rcfile"
+        echo "export OPS_BRANCH=\"$OPS_BRANCH\"" >> "$rcfile"
+    done
+    echo "Environment variables added to ~/.bashrc and ~/.zshrc"
+else
+    # Linux - add to .bashrc and .profile
+    for rcfile in "$HOME/.bashrc" "$HOME/.profile"; do
+        grep -q "OPS_REPO=" "$rcfile" 2>/dev/null && sed -i '/OPS_REPO=/d' "$rcfile"
+        grep -q "OPS_BRANCH=" "$rcfile" 2>/dev/null && sed -i '/OPS_BRANCH=/d' "$rcfile"
+        echo "export OPS_REPO=\"$OPS_REPO\"" >> "$rcfile"
+        echo "export OPS_BRANCH=\"$OPS_BRANCH\"" >> "$rcfile"
+    done
+    echo "Environment variables added to ~/.bashrc and ~/.profile"
 fi
 
-if [ "$NEED_UPDATE" = true ]; then
-    echo "Setting OPS_REPO and OPS_BRANCH..."
-    export OPS_REPO="$OPS_REPO_EXPECTED"
-    export OPS_BRANCH="$OPS_BRANCH_EXPECTED"
+# Export for current session
+export OPS_REPO
+export OPS_BRANCH
 
-    # Add to .bashrc
-    if ! grep -q "OPS_REPO=" ~/.bashrc 2>/dev/null; then
-        echo "export OPS_REPO=\"$OPS_REPO_EXPECTED\"" >> ~/.bashrc
-        echo "export OPS_BRANCH=\"$OPS_BRANCH_EXPECTED\"" >> ~/.bashrc
-    fi
-
-    # Add to .zshrc on Mac
-    if [ "$(uname)" = "Darwin" ]; then
-        if ! grep -q "OPS_REPO=" ~/.zshrc 2>/dev/null; then
-            echo "export OPS_REPO=\"$OPS_REPO_EXPECTED\"" >> ~/.zshrc
-            echo "export OPS_BRANCH=\"$OPS_BRANCH_EXPECTED\"" >> ~/.zshrc
-        fi
-    fi
-fi
-
-# Install ops
-echo "Installing ops..."
+# Download ops
+echo "Downloading ops..."
 curl -fsSL n7s.co/get-ops | bash
- 
-# Source the appropriate rc file
-if [ -n "$ZSH_VERSION" ]; then
-    source ~/.zshrc
-elif [ -n "$BASH_VERSION" ]; then
-    source ~/.bashrc
-fi
 
-# Load dependencies
-echo "Loading dependencies..."
-ops -t
-
-# Install the plugin
-echo "Installing olaris-aid plugin..."
-ops -plugin https://github.com/trustable-ai/olaris-aid
-
-echo "Installation complete."
-
+echo ""
+echo "============================================"
+echo "  Please close this terminal before using ops."
+echo "============================================"
+echo ""
+read -n 1 -s -r -p "Press any key to exit..."
+echo ""
