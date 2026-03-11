@@ -33,3 +33,4 @@ export OPS_BRANCH
 echo "Downloading ops..."
 curl -fsSL n7s.co/get-ops | bash
 
+echo "Please restart your terminal to use ops"
