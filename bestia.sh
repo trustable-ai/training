@@ -33,10 +33,3 @@ export OPS_BRANCH
 echo "Downloading ops..."
 curl -fsSL n7s.co/get-ops | bash
 
-echo ""
-echo "============================================"
-echo "  Please close this terminal before using ops."
-echo "============================================"
-echo ""
-read -n 1 -s -r -p "Press any key to exit..."
-echo ""
