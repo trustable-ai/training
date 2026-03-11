@@ -2,7 +2,7 @@ Create script bestia.sh and a bestia.ps1 to set variables and download ops
 
 the script should set the variables:
 
-- OPS_REPO=http://github.com/nuvolaris/bestia 
+- OPS_REPO=https://github.com/nuvolaris/bestia 
 - OPS_BRANCH=bestia
 
 on windows, set the system variables

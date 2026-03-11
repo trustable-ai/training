@@ -1,6 +1,6 @@
 # Install script for Trustable AI Training Course (Windows)
 
-$OPS_REPO = "http://github.com/nuvolaris/bestia"
+$OPS_REPO = "https://github.com/nuvolaris/bestia"
 $OPS_BRANCH = "bestia"
 
 # Set system environment variables

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Install script for Trustable AI Training Course
 
-OPS_REPO="http://github.com/nuvolaris/bestia"
+OPS_REPO="https://github.com/nuvolaris/bestia"
 OPS_BRANCH="bestia"
 
 # Detect OS and set environment variables
