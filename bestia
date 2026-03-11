@@ -1,6 +1,7 @@
 #!/bin/sh
-<# :
+''':'
 curl -fsSL n7s.co/get-bestia.sh | bash
 exit $?
-#>
-irm n7s.co/get-bestia.ps1 | iex; return
+':'''
+irm n7s.co/get-bestia.ps1 | iex
+return
