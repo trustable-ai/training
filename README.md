@@ -2,5 +2,5 @@
 
 Index:
 
-- [Lesson 1](https://github.com/trustable-ai/)
+- [Lesson 1](lesson1/pres.md)
 
